@@ -1,0 +1,1 @@
+<img src="{{asset('/img/malagavfase.jpg')}} "class="bg-fixed mt-3 w-auto fill-current text-gray-600"/>
