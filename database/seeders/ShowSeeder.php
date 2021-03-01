@@ -32,6 +32,10 @@ class ShowSeeder extends Seeder
 
         DB::insert("INSERT INTO shows VALUES( NULL,'Miercoles',3,3, CURTIME(), CURTIME());");
 
+        DB::insert("INSERT INTO shows VALUES( NULL,'Miercoles',4,4, CURTIME(), CURTIME());");
+
+        DB::insert("INSERT INTO shows VALUES( NULL,'Miercoles',3,4, CURTIME(), CURTIME());");
+
         
     }
 }

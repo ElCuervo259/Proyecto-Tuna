@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PrizeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Metodo que nos permite listar los premios junto con los grupos a los que pertenecen
      *
      * @return \Illuminate\Http\Response
      */
@@ -19,7 +19,12 @@ class PrizeController extends Controller
             return view('prizes.index',$datos);
     }
 
-
+/**
+ * Metodo que nos permite realizar filtros a las tablas de premios
+ *
+ * @param Request $request
+ * @return void
+ */
     public function filtro(Request $request){
 
         $name = $request->get('buscarpor');
@@ -32,7 +37,7 @@ class PrizeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Metodo para crear premios empleando tambien los grupos a los que se otorgan.
      *
      * @return \Illuminate\Http\Response
      */
@@ -42,7 +47,7 @@ class PrizeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Metodo para almacenar los premios
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -88,7 +93,7 @@ class PrizeController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Metodo que nos recundece a la edicion de premios jutno con los grupos
      *
      * @param  \App\Models\Prize  $prize
      * @return \Illuminate\Http\Response
@@ -99,7 +104,7 @@ class PrizeController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Metodo para actualizar los premios
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Prize  $prize
@@ -118,7 +123,7 @@ class PrizeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * metodo para destruir premios
      *
      * @param  \App\Models\Prize  $prize
      * @return \Illuminate\Http\Response

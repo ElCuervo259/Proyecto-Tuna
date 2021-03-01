@@ -29,5 +29,8 @@ class UserSeeder extends Seeder
         DB::insert("INSERT INTO users VALUES( NULL,'User','Victor','Timon', 'Novato', 1, 't@g.com',  NULL,   
         '" . Hash::make('1') . "',NULL,NULL, CURTIME(), CURTIME());");
 
+        DB::insert("INSERT INTO users VALUES( NULL,'User','Antonio','Lomo', 'Novato', 5, 't@g.com',  NULL,   
+        '" . Hash::make('1') . "',NULL,NULL, CURTIME(), CURTIME());");
+
     }
 }

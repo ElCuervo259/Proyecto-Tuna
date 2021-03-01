@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class ShowController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Metodo para mostrar las actuaciones con sus respectivos grupos y teatrs
      *
      * @return \Illuminate\Http\Response
      */
@@ -25,6 +25,7 @@ class ShowController extends Controller
         $datos['shows']= Show::with(['group', 'theatre'])->orderBy('group_id')->paginate(10);
             return view('shows.index',$datos);
 
+            //en caso de que un usuario visualice solo podrá ver las actuaciones en las que participa
         }else{
 
             $datos['shows']= Show::where('group_id',$tuna)->with(['group', 'theatre'])->orderBy('group_id')->paginate(10);
@@ -33,6 +34,12 @@ class ShowController extends Controller
         }
     }
 
+    /**
+     * Metodo para filtrar los registros de las tablas
+     *
+     * @param Request $request
+     * @return void
+     */
     public function filtro(Request $request){
 
         $name = $request->get('buscarpor');
@@ -45,7 +52,7 @@ class ShowController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     *Metodo para redirigir a la creacion de actucion
      *
      * @return \Illuminate\Http\Response
      */
@@ -55,7 +62,7 @@ class ShowController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Metodo para almacenar las actuaciones
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -101,7 +108,7 @@ class ShowController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * metodo para redirigi a la edicion
      *
      * @param  \App\Models\Show  $show
      * @return \Illuminate\Http\Response
@@ -112,7 +119,7 @@ class ShowController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Metodo para actualziar
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Show  $show
@@ -132,7 +139,7 @@ class ShowController extends Controller
     
 
     /**
-     * Remove the specified resource from storage.
+     * Metodo para destruir registros
      *
      * @param  \App\Models\Show  $show
      * @return \Illuminate\Http\Response

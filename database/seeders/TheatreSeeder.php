@@ -26,6 +26,10 @@ class TheatreSeeder extends Seeder
 
         DB::insert("INSERT INTO theatres VALUES( NULL,'Cultura MVA','C/Diagonal',500 ,NULL, CURTIME(), CURTIME());");
 
+        DB::insert("INSERT INTO theatres VALUES( NULL,'Carranque','C/Torcida',1200 ,NULL, CURTIME(), CURTIME());");
+
+        DB::insert("INSERT INTO theatres VALUES( NULL,'Principal MVA','C/Encima',900 ,NULL, CURTIME(), CURTIME());");
+
 
     }
 }

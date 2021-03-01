@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**Controlador que nos servira para conectarnos a la api que nos aportara la informacion meteorologica  */
 class apiController extends Controller
 {
     public function index()

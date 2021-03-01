@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class GroupController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * metodo que nos permitira ver en tablas el conetnid de grupos
      *
      * @return \Illuminate\Http\Response
      */
@@ -37,7 +37,7 @@ class GroupController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Metodo que nos redirecciona al formulario de creacion 
      *
      * @return \Illuminate\Http\Response
      */
@@ -47,7 +47,7 @@ class GroupController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Funcion para almacenar grupos
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -84,7 +84,7 @@ class GroupController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * metodo que redirecciona a la edicion 
      *
      * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
@@ -97,7 +97,7 @@ class GroupController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * metodo para actualizar grupos
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Group  $group
@@ -114,7 +114,7 @@ class GroupController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * metodo para destruir grupos
      *
      * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response

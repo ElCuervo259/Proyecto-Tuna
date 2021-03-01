@@ -21,7 +21,7 @@ class TheatreController extends Controller
 
 
     /**
-     * Display a listing of the resource.
+     * Metodo para mostrar los teatros
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,7 +31,12 @@ class TheatreController extends Controller
             return view('theatres.index',$datos);
     }
 
-
+/**
+ * Metodo para filtrar los diferentes campos de la tabla
+ *
+ * @param Request $request
+ * @return void
+ */
     public function filtro(Request $request){
 
         $name = $request->get('buscarpor');
@@ -44,7 +49,7 @@ class TheatreController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Metodo para redireccionar a la creacion
      *
      * @return \Illuminate\Http\Response
      */
@@ -54,7 +59,7 @@ class TheatreController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Metodo para almacenar los teatros
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -83,6 +88,8 @@ class TheatreController extends Controller
      $theatre->address = $address;
      $theatre->capacidad = $capacidad;
 
+     //controlamos como muestra la vista en caso de tener imagenes almacenadas
+
      if($request->hasFile('image_path')){
 
         $theatre['image_path'] = $request->file('image_path')->store('uploads','public');
@@ -106,7 +113,7 @@ class TheatreController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Metodo para redireccioar a la edicion
      *
      * @param  \App\Models\Theatre  $theatre
      * @return \Illuminate\Http\Response
@@ -117,7 +124,7 @@ class TheatreController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Metodo para actualizar los teatros
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Theatre  $theatre
@@ -128,6 +135,8 @@ class TheatreController extends Controller
         $theatre->name = $request->name;
         $theatre->address = $request->address;
         $theatre->capacidad = $request->capacidad;
+
+        //en caso de contener imagenes
         if($request->hasFile('image_path')){
 
             $theatre['image_path'] = $request->file('image_path')->store('uploads','public');
@@ -139,7 +148,7 @@ class TheatreController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Metodo para destruir 
      *
      * @param  \App\Models\Theatre  $theatre
      * @return \Illuminate\Http\Response

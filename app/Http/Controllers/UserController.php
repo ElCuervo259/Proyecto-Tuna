@@ -13,7 +13,7 @@ use Illuminate\Http\Response;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Metodo para mostrar los diferentes usuarios con sus grupos
      *
      * @return \Illuminate\Http\Response
      */
@@ -23,7 +23,12 @@ class UserController extends Controller
         return view('users.index',$datos);
     }
 
-
+/**
+ * Metodo para filtrar por los diferentes campos de la tabla
+ *
+ * @param Request $request
+ * @return void
+ */
     public function filtro(Request $request){
 
         $name = $request->get('buscarpor');
@@ -37,7 +42,7 @@ class UserController extends Controller
 
 
     /**
-     * Show the form for creating a new resource.
+     * Metodo para redireccionar a la creacion
      *
      * @return \Illuminate\Http\Response
      */
@@ -80,7 +85,7 @@ class UserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Metodo para actaulizar los usuarios
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -110,7 +115,7 @@ class UserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Metodo para destruir usuarios
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -122,12 +127,22 @@ class UserController extends Controller
  
     }
 
-
+/**
+ * metodo para redirigir a la vista de configuración de perfil
+ *
+ * @return void
+ */
     public function config()
    {
     return view('users.config',['groups'=>Group::all()]);
    }
 
+   /**
+    * Meotodo para actualizar el perfil del usuario
+    *
+    * @param Request $request
+    * @return void
+    */
    public function updateperfil(Request $request)
    {
       $user = User::find(Auth::user()->id);
